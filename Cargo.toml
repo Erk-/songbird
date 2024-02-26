@@ -66,9 +66,8 @@ tokio-websockets = { optional = true, version = "0.7", features = [
 tokio-util = { features = ["io"], optional = true, version = "0.7" }
 tracing = { version = "0.1", features = ["log"] }
 tracing-futures = "0.2"
-twilight-gateway = { default-features = false, optional = true, version = "0.15.0" }
-twilight-model = { default-features = false, optional = true, version = "0.15.0" }
-typenum = { optional = true, version = "1.17.0" }
+twilight-gateway = { default-features = false, optional = true, version = "=0.16.0" }
+twilight-model = { default-features = false, optional = true, version = "=0.16.0" }
 url = { optional = true, version = "2" }
 uuid = { features = ["v4"], optional = true, version = "1" }
 
@@ -145,7 +144,7 @@ native = [
     "stream_lib?/native-tls",
     "tokio-tungstenite?/native-tls",
     "tokio-websockets?/native-tls",
-    "twilight-gateway?/native",
+    "twilight-gateway?/native-tls",
 ]
 tungstenite = ["dep:tokio-tungstenite"]
 tws = ["dep:tokio-websockets"]
