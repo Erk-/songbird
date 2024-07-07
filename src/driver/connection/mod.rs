@@ -115,7 +115,8 @@ impl Connection {
         } else {
             let socket = Socket::from(udp.into_std()?);
 
-            #[cfg(not(target_os = "macos"))]
+            // Some operating systems does not allow setting the recv buffer to 0.
+            #[cfg(any(target_os = "linux", target_os = "windows"))]
             socket.set_recv_buffer_size(0)?;
 
             UdpSocket::from_std(socket.into())?
